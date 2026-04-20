@@ -30,10 +30,6 @@ let sentimentChartInstance = null;
 
 // Init DB (Data Awal)
 function initDB() {
-  // --- TAMBAHKAN BARIS INI UNTUK RESET DATABASE ---
-  localStorage.clear();
-  // ---------------------------------------------
-
   if (!localStorage.getItem("users")) {
     const defaultUsers = [
       // ADMIN SESUAI REQUEST: admin / 12345678
@@ -51,6 +47,7 @@ function initDB() {
     localStorage.setItem("feedbacks", JSON.stringify([]));
   }
 }
+initDB();
 
 // --- 2. LOGIC AUTH ---
 function switchAuthTab(tab) {
